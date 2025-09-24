@@ -58,7 +58,7 @@ public class Murs : MonoBehaviour
             if (random_colors == 0)
             {
                 int position_x;
-                position_x = Random.Range(1, 1000);
+                position_x = Random.Range(1, 2000);
                 if (position_x == 1)
                 {
 
@@ -71,7 +71,7 @@ public class Murs : MonoBehaviour
             if (random_colors == 1)
             {
                 int position_x;
-                position_x = Random.Range(1, 1000);
+                position_x = Random.Range(1, 2000);
                 if (position_x == 1)
                 {
 
@@ -85,7 +85,7 @@ public class Murs : MonoBehaviour
             if (random_colors == 2)
             {
                 int position_x;
-                position_x = Random.Range(1, 1000);
+                position_x = Random.Range(1, 2000);
                 if (position_x == 1)
                 {
 
@@ -98,7 +98,7 @@ public class Murs : MonoBehaviour
             if (random_colors == 3)
             {
                 int position_x;
-                position_x = Random.Range(1, 1000);
+                position_x = Random.Range(1, 2000);
                 if (position_x == 1)
                 {
 
@@ -110,35 +110,121 @@ public class Murs : MonoBehaviour
                 }
             }
         }
-       if (distance_r1_r2 == 1674)
-       {
-            int position_x;
-            position_x = Random.Range(1, 1500);
-            if (position_x == 1)
-            {
-
-                Vector3 position = new Vector3((-10) + i, (-1666) - k, (-10) + j);
-                obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
-                obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
-
-
-            }
-        }
-       if (distance_r2_fin == 1660)
+        if (distance_r1_r2 == 1674)
         {
-            int position_x;
-            position_x = Random.Range(1, 1000);
-            if (position_x == 1)
+            if (random_colors == 0)
             {
+                int position_x;
+                position_x = Random.Range(1, 2000);
+                if (position_x == 1)
+                {
 
-                Vector3 position = new Vector3((-10) + i, (-3340) - k, (-10) + j);
-                obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
-                obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                    Vector3 position = new Vector3((-1666) + i, (-10) - k, (-10) + j);
+                    obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                    obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                    obstacle_instant.GetComponent<Renderer>().material = Bleu;
+                }
+            }
+            if (random_colors == 1)
+            {
+                int position_x;
+                position_x = Random.Range(1, 2000);
+                if (position_x == 1)
+                {
+
+                    Vector3 position = new Vector3((-10) + i, (-1666) - k, (-10) + j);
+                    obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                    obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                    obstacle_instant.GetComponent<Renderer>().material = jaune;
+                }
 
             }
-        }
- 
-        
+            if (random_colors == 2)
+            {
+                int position_x;
+                position_x = Random.Range(1, 2000);
+                if (position_x == 1)
+                {
+
+                    Vector3 position = new Vector3((-10) + i, (-1666) - k, (-10) + j);
+                    obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                    obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                    obstacle_instant.GetComponent<Renderer>().material = rouge;
+                }
+            }
+            if (random_colors == 3)
+            {
+                int position_x;
+                position_x = Random.Range(1, 2000);
+                if (position_x == 1)
+                {
+
+                    Vector3 position = new Vector3((-10) + i, (-1666) - k, (-10) + j);
+                    obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                    obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                    obstacle_instant.GetComponent<Renderer>().material = vert;
+
+                }
+            }
+            if (distance_r2_fin == 1660)
+            {
+                if (random_colors == 0)
+                {
+                    int position_x;
+                    position_x = Random.Range(1, 2000);
+                    if (position_x == 1)
+                    {
+
+                        Vector3 position = new Vector3((-10) + i, (-3340) - k, (-10) + j);
+                        obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                        obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                        obstacle_instant.GetComponent<Renderer>().material = Bleu;
+                    }
+                }
+                if (random_colors == 1)
+                {
+                    int position_x;
+                    position_x = Random.Range(1, 2000);
+                    if (position_x == 1)
+                    {
+
+                        Vector3 position = new Vector3((-10) + i, (-3340) - k, (-10) + j);
+                        obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                        obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                        obstacle_instant.GetComponent<Renderer>().material = jaune;
+                    }
+
+                }
+                if (random_colors == 2)
+                {
+                    int position_x;
+                    position_x = Random.Range(1, 2000);
+                    if (position_x == 1)
+                    {
+
+                        Vector3 position = new Vector3((-10) + i, (-3340) - k, (-10) + j);
+                        obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                        obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                        obstacle_instant.GetComponent<Renderer>().material = rouge;
+                    }
+                }
+                if (random_colors == 3)
+                {
+                    int position_x;
+                    position_x = Random.Range(1, 2000);
+                    if (position_x == 1)
+                    {
+
+                        Vector3 position = new Vector3((-10) + i, (-3340) - k, (-10) + j);
+                        obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
+                        obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+                        obstacle_instant.GetComponent<Renderer>().material = vert;
+
+                    }
+                }
+            }
+
+        }   
     }
   
 
