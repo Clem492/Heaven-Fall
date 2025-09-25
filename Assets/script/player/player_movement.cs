@@ -20,26 +20,17 @@ public class player_movement : MonoBehaviour
     //je vais créer une méthode pour délacer le personnage
     void move()
     {
-        if (Input.GetKey(input_front))
-        {
-            transform.Translate(0, 0, player_speed * Time.deltaTime);
-        }
-        if (Input.GetKey(input_back))
-        {
-            transform.Translate(0, 0, -(player_speed) * Time.deltaTime);
-        }
-        if (Input.GetKey(input_left))
-        {
-            transform.Translate(-(player_speed) * Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey(input_right))
-        {
-            transform.Translate(player_speed * Time.deltaTime, 0, 0);
-        }
+
+        float position_x = Input.GetAxis("Vertical");
+        float position_y = Input.GetAxis("Horizontal");
+        Vector3 new_position = new Vector3(position_y * Time.deltaTime * player_speed, 0, position_x * Time.deltaTime * player_speed);
+        player.transform.Translate(new_position);
+        
+       
     }
 
-    //je vais créer une méthode pour pouvoir déplacer la souris
-    void camera()
+    //je vais créer une méthode pour pouvoir déplacer la camera
+    void _camera()
     {
         float mouse_x = Input.GetAxisRaw("Mouse X");
         float mouse_y = Input.GetAxisRaw("Mouse Y");
@@ -55,6 +46,10 @@ public class player_movement : MonoBehaviour
     void souris_bloquer()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
        
     }
 
@@ -67,11 +62,11 @@ public class player_movement : MonoBehaviour
     private void Update()
     {
         move();
-        camera();
+        _camera();
         
     }
 
     
-
+    
 
 }

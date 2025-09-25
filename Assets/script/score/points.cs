@@ -10,6 +10,7 @@ public class points : MonoBehaviour
     [SerializeField] TMPro.TextMeshProUGUI score;
     //je dois maintenant faire des variables pour le système de record
     float record_joueur;
+    float score_sauvegarder;
     [SerializeField] TMPro.TextMeshProUGUI record;
     //je dois creer une méthode pour compter les points du joueur
     void Systeme_point()
@@ -21,42 +22,28 @@ public class points : MonoBehaviour
         score.text = "score : "+score_joueur;
         
     }
-
+    //j'ai utiliser une méthode pour détecter les collision et adapter en fonction le score et le record du joueur 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "obstacle" && score_joueur > record_joueur)
         {
-            if (record_joueur == 0)
-            {
+            record_joueur = score_joueur;
+            record.text = "record :" + record_joueur;
 
-            }
-            
 
         }
-        
-
-    }
-    //je dois maintenant faire une méthode pour mon système de record
-    void Record_joueur()
-    {
-       
-        if (score_joueur > record_joueur)
-        {
-            record.text = "record : " + score_joueur;
-        }
-
-
     }
     void Start()
     {
         record_joueur = 0;
-        score_joueur = 0;
+        
     }
 
 
     void Update()
     {
         Systeme_point();
-        Record_joueur();
+       
+       
     }
 }

@@ -10,6 +10,7 @@ public class player_collision : MonoBehaviour
         if (collision.gameObject.tag == "obstacle")
         {
             gameObject.transform.position = new Vector3(0, 2, 0);
+            gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, 0);
         }
     }
 }
