@@ -57,7 +57,7 @@ public class points : MonoBehaviour
 
     void Start()
     {
-        record_joueur = 0;
+        
         
     }
 

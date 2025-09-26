@@ -5,6 +5,8 @@ public class Murs : MonoBehaviour
 {   //j'importe mon prefabs pour la génération procédural
     [SerializeField] private GameObject obstacle;
     GameObject obstacle_instant;
+    [SerializeField] GameObject parent_obstacle_prefab;
+    public GameObject parent_obstacle;
     [SerializeField] GameObject origin;
     [SerializeField] GameObject fin;
     [SerializeField] GameObject repère1;
@@ -33,7 +35,8 @@ public class Murs : MonoBehaviour
     //je vais faire une méthode pour créer des cubes sur un plan
     //Ensuite je vais faire en sorte qu'il y en as qui spawn sur y
    public void plan()
-    {
+    {   
+       parent_obstacle = Instantiate(parent_obstacle_prefab);
         for (int i = 0; i < longueur; i++)
         {
             for (int j = 0; j < largeur; j++)
@@ -66,6 +69,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = Bleu;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
                 }
             }
             if (random_colors == 1)
@@ -79,6 +83,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = jaune;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
                 }
 
             }
@@ -93,6 +98,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = rouge;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
                 }
             }
             if (random_colors == 3)
@@ -106,6 +112,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = vert;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
 
                 }
             }
@@ -123,6 +130,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = Bleu;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
                 }
             }
             if (random_colors == 1)
@@ -136,6 +144,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = jaune;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
                 }
 
             }
@@ -150,6 +159,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = rouge;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
                 }
             }
             if (random_colors == 3)
@@ -163,6 +173,7 @@ public class Murs : MonoBehaviour
                     obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                     obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                     obstacle_instant.GetComponent<Renderer>().material = vert;
+                    obstacle_instant.transform.parent = parent_obstacle.transform;
 
                 }
             }
@@ -179,6 +190,7 @@ public class Murs : MonoBehaviour
                         obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                         obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                         obstacle_instant.GetComponent<Renderer>().material = Bleu;
+                        obstacle_instant.transform.parent = parent_obstacle.transform;
                     }
                 }
                 if (random_colors == 1)
@@ -192,6 +204,7 @@ public class Murs : MonoBehaviour
                         obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                         obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                         obstacle_instant.GetComponent<Renderer>().material = jaune;
+                        obstacle_instant.transform.parent = parent_obstacle.transform;
                     }
 
                 }
@@ -206,6 +219,7 @@ public class Murs : MonoBehaviour
                         obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                         obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                         obstacle_instant.GetComponent<Renderer>().material = rouge;
+                        obstacle_instant.transform.parent = parent_obstacle.transform;
                     }
                 }
                 if (random_colors == 3)
@@ -219,10 +233,13 @@ public class Murs : MonoBehaviour
                         obstacle_instant = Instantiate(obstacle, position, Quaternion.identity);
                         obstacle_instant.transform.localScale = new Vector3(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
                         obstacle_instant.GetComponent<Renderer>().material = vert;
+                        obstacle_instant.transform.parent = parent_obstacle.transform;
 
                     }
                 }
+                
             }
+            
 
         }   
     }
@@ -231,7 +248,7 @@ public class Murs : MonoBehaviour
     private void Start()
     {
 
-
+        //je calcule la distance pour que la densiter augemente en fonction de la pronfondeur
     
         distance_debut_r1 = Vector3.Distance(origin.transform.position, repère1.transform.position);
         distance_r1_r2 = Vector3.Distance(repère1.transform.position, repère2.transform.position);

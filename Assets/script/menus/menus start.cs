@@ -9,5 +9,8 @@ public class menusstart : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-
+    public void leave_application()
+    {
+        Application.Quit();
+    }
 }

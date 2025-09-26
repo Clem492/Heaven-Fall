@@ -7,6 +7,7 @@ public class player_collision : MonoBehaviour
     [SerializeField] Image restart;
     [SerializeField] Image score;
     [SerializeField] GameObject cam;
+    [SerializeField] GameObject fleche;
     public bool restart_menu;
 
     //je vais faire en sorte que si mon joueur touche un obstacle portant le tag obstacle alors il est téléporter au spawn
@@ -28,5 +29,15 @@ public class player_collision : MonoBehaviour
     private void Start()
     {
         restart_menu = false;
+        
+    }
+    private void Update()
+    {
+        if (restart_menu == true)
+        {
+            fleche.gameObject.SetActive(false);
+        }
+        else
+            fleche.gameObject.SetActive(true);
     }
 }

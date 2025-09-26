@@ -17,7 +17,7 @@ public class player_movement : MonoBehaviour
     [SerializeField] int cam_speed;
 
 
-    //je vais créer une méthode pour délacer le personnage
+    //je vais créer une fonction pour délacer le personnage
     void move()
     {
         if (gameObject.GetComponent<player_collision>().restart_menu == false)
@@ -33,7 +33,7 @@ public class player_movement : MonoBehaviour
 
     }
 
-    //je vais créer une méthode pour pouvoir déplacer la camera
+    //je vais créer une fonction pour pouvoir déplacer la camera
     void _camera()
     {
         if (gameObject.GetComponent<player_collision>().restart_menu == false)
@@ -54,11 +54,21 @@ public class player_movement : MonoBehaviour
     void souris_bloquer()
     {
         Cursor.lockState = CursorLockMode.Locked;
+       
+       
+    }
+    //je vais faire une fonction pour débloquer la souris si necessaire
+    void souris_debloquer_ou_bloquer()
+    {
         if (Input.GetKey(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
         }
-       
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
 
@@ -71,7 +81,7 @@ public class player_movement : MonoBehaviour
     {
         move();
         _camera();
-        
+        souris_debloquer_ou_bloquer();
     }
 
     
