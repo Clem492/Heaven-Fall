@@ -32,7 +32,7 @@ public class Murs : MonoBehaviour
     //je dois creer un plan sur lequel il manque des cubes 
     //je vais faire une méthode pour créer des cubes sur un plan
     //Ensuite je vais faire en sorte qu'il y en as qui spawn sur y
-    void plan()
+   public void plan()
     {
         for (int i = 0; i < longueur; i++)
         {

@@ -20,25 +20,33 @@ public class player_movement : MonoBehaviour
     //je vais créer une méthode pour délacer le personnage
     void move()
     {
+        if (gameObject.GetComponent<player_collision>().restart_menu == false)
+        {
+            float position_x = Input.GetAxis("Vertical");
+            float position_y = Input.GetAxis("Horizontal");
+            Vector3 new_position = new Vector3(position_y * Time.deltaTime * player_speed, 0, position_x * Time.deltaTime * player_speed);
+            player.transform.Translate(new_position);
+        }
+      
 
-        float position_x = Input.GetAxis("Vertical");
-        float position_y = Input.GetAxis("Horizontal");
-        Vector3 new_position = new Vector3(position_y * Time.deltaTime * player_speed, 0, position_x * Time.deltaTime * player_speed);
-        player.transform.Translate(new_position);
-        
-       
+
+
     }
 
     //je vais créer une méthode pour pouvoir déplacer la camera
     void _camera()
     {
-        float mouse_x = Input.GetAxisRaw("Mouse X");
-        float mouse_y = Input.GetAxisRaw("Mouse Y");
-        Vector3 cam_position_x = new Vector3(0, mouse_x, 0) * cam_speed * Time.deltaTime;
-        player.transform.Rotate(cam_position_x);
+        if (gameObject.GetComponent<player_collision>().restart_menu == false)
+        {
+            float mouse_x = Input.GetAxisRaw("Mouse X");
+            float mouse_y = Input.GetAxisRaw("Mouse Y");
+            Vector3 cam_position_x = new Vector3(0, mouse_x, 0) * cam_speed * Time.deltaTime;
+            player.transform.Rotate(cam_position_x);
 
-        Vector3 cam_position_y = new Vector3(-mouse_y, 0, 0) * cam_speed * Time.deltaTime;
-        player_camera.transform.Rotate(cam_position_y);
+            Vector3 cam_position_y = new Vector3(-mouse_y, 0, 0) * cam_speed * Time.deltaTime;
+            player_camera.transform.Rotate(cam_position_y);
+        }
+      
     }
 
     
